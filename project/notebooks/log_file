@@ -1,0 +1,213 @@
+2021-09-14 20:12:30,923 - ISR.utils.train_helper - INFO - 
+Training details:
+2021-09-14 20:12:30,924 - ISR.utils.train_helper - INFO -   training_parameters: 
+2021-09-14 20:12:30,925 - ISR.utils.train_helper - INFO -     lr_train_dir: div2k/DIV2K_train_LR_bicubic/X2/
+2021-09-14 20:12:30,926 - ISR.utils.train_helper - INFO -     hr_train_dir: div2k/DIV2K_train_HR/
+2021-09-14 20:12:30,926 - ISR.utils.train_helper - INFO -     lr_valid_dir: div2k/DIV2K_train_LR_bicubic/X2/
+2021-09-14 20:12:30,926 - ISR.utils.train_helper - INFO -     hr_valid_dir: div2k/DIV2K_train_HR/
+2021-09-14 20:12:30,927 - ISR.utils.train_helper - INFO -     loss_weights: {'generator': 0.0, 'feature_extractor': 0.0833, 'discriminator': 0.01}
+2021-09-14 20:12:30,927 - ISR.utils.train_helper - INFO -     log_dirs: {'logs': './logs', 'weights': './weights'}
+2021-09-14 20:12:30,928 - ISR.utils.train_helper - INFO -     fallback_save_every_n_epochs: 2
+2021-09-14 20:12:30,929 - ISR.utils.train_helper - INFO -     dataname: div2k
+2021-09-14 20:12:30,929 - ISR.utils.train_helper - INFO -     n_validation: 40
+2021-09-14 20:12:30,930 - ISR.utils.train_helper - INFO -     flatness: {'min': 0.0, 'max': 0.15, 'increase': 0.01, 'increase_frequency': 5}
+2021-09-14 20:12:30,930 - ISR.utils.train_helper - INFO -     learning_rate: {'initial_value': 0.0004, 'decay_factor': 0.5, 'decay_frequency': 30}
+2021-09-14 20:12:30,930 - ISR.utils.train_helper - INFO -     adam_optimizer: {'beta1': 0.9, 'beta2': 0.999, 'epsilon': None}
+2021-09-14 20:12:30,930 - ISR.utils.train_helper - INFO -     losses: {'generator': 'mae', 'discriminator': 'binary_crossentropy', 'feature_extractor': 'mse'}
+2021-09-14 20:12:30,931 - ISR.utils.train_helper - INFO -     metrics: {'generator': <function PSNR_Y at 0x7f9554358040>}
+2021-09-14 20:12:30,932 - ISR.utils.train_helper - INFO -     lr_patch_size: 40
+2021-09-14 20:12:30,932 - ISR.utils.train_helper - INFO -     steps_per_epoch: 20
+2021-09-14 20:12:30,932 - ISR.utils.train_helper - INFO -     batch_size: 4
+2021-09-14 20:12:30,932 - ISR.utils.train_helper - INFO -     starting_epoch: 0
+2021-09-14 20:12:30,933 - ISR.utils.train_helper - INFO -   generator: 
+2021-09-14 20:12:30,933 - ISR.utils.train_helper - INFO -     name: rrdn
+2021-09-14 20:12:30,933 - ISR.utils.train_helper - INFO -     parameters: {'C': 4, 'D': 3, 'G': 64, 'G0': 64, 'T': 10, 'x': 2}
+2021-09-14 20:12:30,934 - ISR.utils.train_helper - INFO -     weights_generator: None
+2021-09-14 20:12:30,936 - ISR.utils.train_helper - INFO -   discriminator: 
+2021-09-14 20:12:30,937 - ISR.utils.train_helper - INFO -     name: srgan-large
+2021-09-14 20:12:30,937 - ISR.utils.train_helper - INFO -     weights_discriminator: None
+2021-09-14 20:12:30,938 - ISR.utils.train_helper - INFO -   feature_extractor: 
+2021-09-14 20:12:30,938 - ISR.utils.train_helper - INFO -     name: vgg19
+2021-09-14 20:12:30,939 - ISR.utils.train_helper - INFO -     layers: [5, 9]
+2021-09-14 20:12:39,827 - ISR.train.trainer - INFO - Epoch 0/1
+2021-09-14 20:12:39,830 - ISR.train.trainer - INFO - Current learning rate: 0.00039999998989515007
+2021-09-14 20:12:56,556 - ISR.train.trainer - DEBUG - Losses at step 0:
+ {'train_d_real_loss': 0.8302000164985657, 'train_d_real_accuracy': 0.37062498927116394, 'train_d_fake_loss': 0.8333362340927124, 'train_d_fake_accuracy': 0.4300000071525574, 'train_loss': 0.48983338475227356, 'train_generator_loss': 0.17162637412548065, 'train_discriminator_loss': 0.6051990389823914, 'train_feature_extractor_loss': 1.5768601894378662, 'train_feature_extractor_1_loss': 10.038538932800293, 'train_generator_PSNR_Y': 12.80827808380127}
+2021-09-14 20:13:05,559 - ISR.train.trainer - DEBUG - Losses at step 1:
+ {'train_d_real_loss': 0.6839236617088318, 'train_d_real_accuracy': 0.5831249952316284, 'train_d_fake_loss': 0.9034686088562012, 'train_d_fake_accuracy': 0.47437500953674316, 'train_loss': 1.999933123588562, 'train_generator_loss': 0.48901450634002686, 'train_discriminator_loss': 0.6868391633033752, 'train_feature_extractor_loss': 8.535316467285156, 'train_feature_extractor_1_loss': 39.317378997802734, 'train_generator_PSNR_Y': 5.525976657867432}
+2021-09-14 20:13:13,605 - ISR.train.trainer - DEBUG - Losses at step 2:
+ {'train_d_real_loss': 0.5063173174858093, 'train_d_real_accuracy': 0.7487499713897705, 'train_d_fake_loss': 0.8187199234962463, 'train_d_fake_accuracy': 0.5262500047683716, 'train_loss': 1.2526788711547852, 'train_generator_loss': 0.2223675549030304, 'train_discriminator_loss': 0.655128538608551, 'train_feature_extractor_loss': 4.584357738494873, 'train_feature_extractor_1_loss': 25.334672927856445, 'train_generator_PSNR_Y': 12.465601921081543}
+2021-09-14 20:13:21,129 - ISR.train.trainer - DEBUG - Losses at step 3:
+ {'train_d_real_loss': 0.6027725338935852, 'train_d_real_accuracy': 0.6800000071525574, 'train_d_fake_loss': 0.9693925976753235, 'train_d_fake_accuracy': 0.4556249976158142, 'train_loss': 1.1850929260253906, 'train_generator_loss': 0.5686639547348022, 'train_discriminator_loss': 1.1205475330352783, 'train_feature_extractor_loss': 4.730191230773926, 'train_feature_extractor_1_loss': 23.45438003540039, 'train_generator_PSNR_Y': 5.417912006378174}
+2021-09-14 20:13:28,763 - ISR.train.trainer - DEBUG - Losses at step 4:
+ {'train_d_real_loss': 0.3933723568916321, 'train_d_real_accuracy': 0.8299999833106995, 'train_d_fake_loss': 0.3128693103790283, 'train_d_fake_accuracy': 0.9143750071525574, 'train_loss': 0.9141374230384827, 'train_generator_loss': 0.40735378861427307, 'train_discriminator_loss': 1.5910441875457764, 'train_feature_extractor_loss': 3.310701847076416, 'train_feature_extractor_1_loss': 18.25537109375, 'train_generator_PSNR_Y': 7.7224836349487305}
+2021-09-14 20:13:36,830 - ISR.train.trainer - DEBUG - Losses at step 5:
+ {'train_d_real_loss': 0.29401668906211853, 'train_d_real_accuracy': 0.8943750262260437, 'train_d_fake_loss': 0.33936554193496704, 'train_d_fake_accuracy': 0.887499988079071, 'train_loss': 0.9265610575675964, 'train_generator_loss': 0.36139488220214844, 'train_discriminator_loss': 0.8390895128250122, 'train_feature_extractor_loss': 3.4851160049438477, 'train_feature_extractor_1_loss': 18.559785842895508, 'train_generator_PSNR_Y': 8.02251148223877}
+2021-09-14 20:13:44,387 - ISR.train.trainer - DEBUG - Losses at step 6:
+ {'train_d_real_loss': 0.26665595173835754, 'train_d_real_accuracy': 0.9449999928474426, 'train_d_fake_loss': 0.30546069145202637, 'train_d_fake_accuracy': 0.9206249713897705, 'train_loss': 1.5372246503829956, 'train_generator_loss': 0.290340781211853, 'train_discriminator_loss': 0.8548469543457031, 'train_feature_extractor_loss': 5.613458633422852, 'train_feature_extractor_1_loss': 31.089448928833008, 'train_generator_PSNR_Y': 9.227287292480469}
+2021-09-14 20:13:52,128 - ISR.train.trainer - DEBUG - Losses at step 7:
+ {'train_d_real_loss': 0.554961621761322, 'train_d_real_accuracy': 0.6737499833106995, 'train_d_fake_loss': 1.720910906791687, 'train_d_fake_accuracy': 0.10062500089406967, 'train_loss': 0.945328950881958, 'train_generator_loss': 0.21574802696704865, 'train_discriminator_loss': 1.4842180013656616, 'train_feature_extractor_loss': 3.1910059452056885, 'train_feature_extractor_1_loss': 19.149612426757812, 'train_generator_PSNR_Y': 11.71912670135498}
+2021-09-14 20:13:59,768 - ISR.train.trainer - DEBUG - Losses at step 8:
+ {'train_d_real_loss': 1.0116164684295654, 'train_d_real_accuracy': 0.6887500286102295, 'train_d_fake_loss': 0.48942261934280396, 'train_d_fake_accuracy': 0.7481250166893005, 'train_loss': 1.0016447305679321, 'train_generator_loss': 0.33349618315696716, 'train_discriminator_loss': 2.6273412704467773, 'train_feature_extractor_loss': 3.466909170150757, 'train_feature_extractor_1_loss': 19.951370239257812, 'train_generator_PSNR_Y': 8.927291870117188}
+2021-09-14 20:14:07,793 - ISR.train.trainer - DEBUG - Losses at step 9:
+ {'train_d_real_loss': 0.8801544308662415, 'train_d_real_accuracy': 0.6075000166893005, 'train_d_fake_loss': 0.2742215692996979, 'train_d_fake_accuracy': 0.8981249928474426, 'train_loss': 1.3648053407669067, 'train_generator_loss': 0.46272608637809753, 'train_discriminator_loss': 2.0986597537994385, 'train_feature_extractor_loss': 4.619353771209717, 'train_feature_extractor_1_loss': 27.645204544067383, 'train_generator_PSNR_Y': 6.9094719886779785}
+2021-09-14 20:14:15,482 - ISR.train.trainer - DEBUG - Losses at step 10:
+ {'train_d_real_loss': 0.6093125343322754, 'train_d_real_accuracy': 0.6974999904632568, 'train_d_fake_loss': 0.452266663312912, 'train_d_fake_accuracy': 0.8043749928474426, 'train_loss': 1.0763614177703857, 'train_generator_loss': 0.35960879921913147, 'train_discriminator_loss': 0.023308970034122467, 'train_feature_extractor_loss': 5.171468734741211, 'train_feature_extractor_1_loss': 20.66594696044922, 'train_generator_PSNR_Y': 8.888062477111816}
+2021-09-14 20:14:23,113 - ISR.train.trainer - DEBUG - Losses at step 11:
+ {'train_d_real_loss': 0.11942421644926071, 'train_d_real_accuracy': 1.0, 'train_d_fake_loss': 0.4055972993373871, 'train_d_fake_accuracy': 0.7856249809265137, 'train_loss': 1.3610115051269531, 'train_generator_loss': 0.4922944903373718, 'train_discriminator_loss': 0.011263744905591011, 'train_feature_extractor_loss': 5.424079418182373, 'train_feature_extractor_1_loss': 27.250560760498047, 'train_generator_PSNR_Y': 5.78225564956665}
+2021-09-14 20:14:30,711 - ISR.train.trainer - DEBUG - Losses at step 12:
+ {'train_d_real_loss': 0.25795993208885193, 'train_d_real_accuracy': 0.8993750214576721, 'train_d_fake_loss': 0.24058878421783447, 'train_d_fake_accuracy': 0.9487500190734863, 'train_loss': 0.6861121654510498, 'train_generator_loss': 0.39269810914993286, 'train_discriminator_loss': 0.02464291639626026, 'train_feature_extractor_loss': 2.8259148597717285, 'train_feature_extractor_1_loss': 13.641449928283691, 'train_generator_PSNR_Y': 8.359724998474121}
+2021-09-14 20:14:38,824 - ISR.train.trainer - DEBUG - Losses at step 13:
+ {'train_d_real_loss': 0.11797980964183807, 'train_d_real_accuracy': 0.9906250238418579, 'train_d_fake_loss': 0.09345555305480957, 'train_d_fake_accuracy': 1.0, 'train_loss': 0.5970914959907532, 'train_generator_loss': 0.16797547042369843, 'train_discriminator_loss': 0.03717684745788574, 'train_feature_extractor_loss': 2.3728973865509033, 'train_feature_extractor_1_loss': 11.954107284545898, 'train_generator_PSNR_Y': 13.15878677368164}
+2021-09-14 20:14:46,463 - ISR.train.trainer - DEBUG - Losses at step 14:
+ {'train_d_real_loss': 0.2152947634458542, 'train_d_real_accuracy': 0.9356250166893005, 'train_d_fake_loss': 0.12803201377391815, 'train_d_fake_accuracy': 0.996874988079071, 'train_loss': 1.2076133489608765, 'train_generator_loss': 0.3409343659877777, 'train_discriminator_loss': 0.03845963627099991, 'train_feature_extractor_loss': 5.831719398498535, 'train_feature_extractor_1_loss': 23.153364181518555, 'train_generator_PSNR_Y': 8.886064529418945}
+2021-09-14 20:14:54,093 - ISR.train.trainer - DEBUG - Losses at step 15:
+ {'train_d_real_loss': 0.3556217849254608, 'train_d_real_accuracy': 0.8068749904632568, 'train_d_fake_loss': 1.9688125848770142, 'train_d_fake_accuracy': 0.05624999850988388, 'train_loss': 0.3759876489639282, 'train_generator_loss': 0.15856611728668213, 'train_discriminator_loss': 1.510627269744873, 'train_feature_extractor_loss': 1.5146256685256958, 'train_feature_extractor_1_loss': 7.149993419647217, 'train_generator_PSNR_Y': 15.767436981201172}
+2021-09-14 20:15:02,214 - ISR.train.trainer - DEBUG - Losses at step 16:
+ {'train_d_real_loss': 0.6886837482452393, 'train_d_real_accuracy': 0.6018750071525574, 'train_d_fake_loss': 0.36709266901016235, 'train_d_fake_accuracy': 0.8643749952316284, 'train_loss': 0.3567539155483246, 'train_generator_loss': 0.19346900284290314, 'train_discriminator_loss': 2.1579718589782715, 'train_feature_extractor_loss': 1.6478277444839478, 'train_feature_extractor_1_loss': 6.399571418762207, 'train_generator_PSNR_Y': 12.703564643859863}
+2021-09-14 20:15:10,963 - ISR.train.trainer - DEBUG - Losses at step 17:
+ {'train_d_real_loss': 0.8094700574874878, 'train_d_real_accuracy': 0.4268749952316284, 'train_d_fake_loss': 0.33444783091545105, 'train_d_fake_accuracy': 0.8868749737739563, 'train_loss': 0.5548297166824341, 'train_generator_loss': 0.23161078989505768, 'train_discriminator_loss': 0.21842631697654724, 'train_feature_extractor_loss': 2.5753467082977295, 'train_feature_extractor_1_loss': 10.693451881408691, 'train_generator_PSNR_Y': 13.605154991149902}
+2021-09-14 20:15:19,063 - ISR.train.trainer - DEBUG - Losses at step 18:
+ {'train_d_real_loss': 0.1777138113975525, 'train_d_real_accuracy': 0.9975000023841858, 'train_d_fake_loss': 0.19990165531635284, 'train_d_fake_accuracy': 0.9831249713897705, 'train_loss': 1.1243990659713745, 'train_generator_loss': 0.39329996705055237, 'train_discriminator_loss': 2.025424003601074, 'train_feature_extractor_loss': 5.592004299163818, 'train_feature_extractor_1_loss': 20.918075561523438, 'train_generator_PSNR_Y': 8.639863014221191}
+2021-09-14 20:15:27,128 - ISR.train.trainer - DEBUG - Losses at step 19:
+ {'train_d_real_loss': 0.24909503757953644, 'train_d_real_accuracy': 0.9268749952316284, 'train_d_fake_loss': 0.3650571405887604, 'train_d_fake_accuracy': 0.8506249785423279, 'train_loss': 0.5740058422088623, 'train_generator_loss': 0.5466398000717163, 'train_discriminator_loss': 0.47380325198173523, 'train_feature_extractor_loss': 2.2410056591033936, 'train_feature_extractor_1_loss': 11.426889419555664, 'train_generator_PSNR_Y': 6.479527950286865}
+2021-09-14 20:15:27,129 - ISR.train.trainer - INFO - Epoch 0 took      167.3s
+2021-09-14 20:16:10,444 - ISR.utils.train_helper - INFO - {'val_loss': 0.690561830997467, 'val_generator_loss': 0.38988250494003296, 'val_discriminator_loss': 0.1240231841802597, 'val_feature_extractor_loss': 3.149735927581787, 'val_feature_extractor_1_loss': 13.400601387023926, 'val_generator_PSNR_Y': 8.973652839660645, 'train_d_real_loss': 0.24909503757953644, 'train_d_real_accuracy': 0.9268749952316284, 'train_d_fake_loss': 0.3650571405887604, 'train_d_fake_accuracy': 0.8506249785423279, 'train_loss': 0.5740058422088623, 'train_generator_loss': 0.5466398000717163, 'train_discriminator_loss': 0.47380325198173523, 'train_feature_extractor_loss': 2.2410056591033936, 'train_feature_extractor_1_loss': 11.426889419555664, 'train_generator_PSNR_Y': 6.479527950286865}
+2021-09-14 20:16:10,445 - ISR.utils.train_helper - INFO - val_generator_PSNR_Y improved from       -inf to    8.97365
+2021-09-14 20:16:10,446 - ISR.utils.train_helper - INFO - Saving weights
+2021-09-15 05:29:51,376 - ISR.utils.train_helper - INFO - 
+Training details:
+2021-09-15 05:29:51,377 - ISR.utils.train_helper - INFO -   training_parameters: 
+2021-09-15 05:29:51,377 - ISR.utils.train_helper - INFO -     lr_train_dir: div2k/DIV2K_train_LR_bicubic/X2/
+2021-09-15 05:29:51,378 - ISR.utils.train_helper - INFO -     hr_train_dir: div2k/DIV2K_train_HR/
+2021-09-15 05:29:51,378 - ISR.utils.train_helper - INFO -     lr_valid_dir: div2k/DIV2K_train_LR_bicubic/X2/
+2021-09-15 05:29:51,379 - ISR.utils.train_helper - INFO -     hr_valid_dir: div2k/DIV2K_train_HR/
+2021-09-15 05:29:51,380 - ISR.utils.train_helper - INFO -     loss_weights: {'generator': 0.0, 'feature_extractor': 0.0833, 'discriminator': 0.01}
+2021-09-15 05:29:51,380 - ISR.utils.train_helper - INFO -     log_dirs: {'logs': './logs', 'weights': './weights'}
+2021-09-15 05:29:51,381 - ISR.utils.train_helper - INFO -     fallback_save_every_n_epochs: 2
+2021-09-15 05:29:51,382 - ISR.utils.train_helper - INFO -     dataname: div2k
+2021-09-15 05:29:51,382 - ISR.utils.train_helper - INFO -     n_validation: 40
+2021-09-15 05:29:51,382 - ISR.utils.train_helper - INFO -     flatness: {'min': 0.0, 'max': 0.15, 'increase': 0.01, 'increase_frequency': 5}
+2021-09-15 05:29:51,383 - ISR.utils.train_helper - INFO -     learning_rate: {'initial_value': 0.0004, 'decay_factor': 0.5, 'decay_frequency': 30}
+2021-09-15 05:29:51,384 - ISR.utils.train_helper - INFO -     adam_optimizer: {'beta1': 0.9, 'beta2': 0.999, 'epsilon': None}
+2021-09-15 05:29:51,385 - ISR.utils.train_helper - INFO -     losses: {'generator': 'mae', 'discriminator': 'binary_crossentropy', 'feature_extractor': 'mse'}
+2021-09-15 05:29:51,386 - ISR.utils.train_helper - INFO -     metrics: {'generator': <function PSNR_Y at 0x7f1db80d70d0>}
+2021-09-15 05:29:51,387 - ISR.utils.train_helper - INFO -     lr_patch_size: 40
+2021-09-15 05:29:51,387 - ISR.utils.train_helper - INFO -     steps_per_epoch: 20
+2021-09-15 05:29:51,388 - ISR.utils.train_helper - INFO -     batch_size: 4
+2021-09-15 05:29:51,390 - ISR.utils.train_helper - INFO -     starting_epoch: 0
+2021-09-15 05:29:51,391 - ISR.utils.train_helper - INFO -   generator: 
+2021-09-15 05:29:51,392 - ISR.utils.train_helper - INFO -     name: rrdn
+2021-09-15 05:29:51,394 - ISR.utils.train_helper - INFO -     parameters: {'C': 4, 'D': 3, 'G': 64, 'G0': 64, 'T': 10, 'x': 2}
+2021-09-15 05:29:51,395 - ISR.utils.train_helper - INFO -     weights_generator: None
+2021-09-15 05:29:51,396 - ISR.utils.train_helper - INFO -   discriminator: 
+2021-09-15 05:29:51,397 - ISR.utils.train_helper - INFO -     name: srgan-large
+2021-09-15 05:29:51,397 - ISR.utils.train_helper - INFO -     weights_discriminator: None
+2021-09-15 05:29:51,398 - ISR.utils.train_helper - INFO -   feature_extractor: 
+2021-09-15 05:29:51,398 - ISR.utils.train_helper - INFO -     name: vgg19
+2021-09-15 05:29:51,398 - ISR.utils.train_helper - INFO -     layers: [5, 9]
+2021-09-15 05:30:01,665 - ISR.train.trainer - INFO - Epoch 0/1
+2021-09-15 05:30:01,926 - ISR.train.trainer - INFO - Current learning rate: 0.00039999998989515007
+2021-09-15 05:30:28,376 - ISR.train.trainer - DEBUG - Losses at step 0:
+ {'train_d_real_loss': 0.6993594169616699, 'train_d_real_accuracy': 0.5649999976158142, 'train_d_fake_loss': 0.9532366991043091, 'train_d_fake_accuracy': 0.37687501311302185, 'train_loss': 1.1441363096237183, 'train_generator_loss': 0.5077109932899475, 'train_discriminator_loss': 0.6041977405548096, 'train_feature_extractor_loss': 3.778266668319702, 'train_feature_extractor_1_loss': 23.546926498413086, 'train_generator_PSNR_Y': 5.983348846435547}
+2021-09-15 05:30:36,570 - ISR.train.trainer - DEBUG - Losses at step 1:
+ {'train_d_real_loss': 0.587358832359314, 'train_d_real_accuracy': 0.7787500023841858, 'train_d_fake_loss': 1.0317726135253906, 'train_d_fake_accuracy': 0.2706249952316284, 'train_loss': 1.4704217910766602, 'train_generator_loss': 0.19846920669078827, 'train_discriminator_loss': 0.7179794311523438, 'train_feature_extractor_loss': 5.159475326538086, 'train_feature_extractor_1_loss': 29.97238540649414, 'train_generator_PSNR_Y': 13.084259986877441}
+2021-09-15 05:30:45,198 - ISR.train.trainer - DEBUG - Losses at step 2:
+ {'train_d_real_loss': 0.6455737352371216, 'train_d_real_accuracy': 0.6637499928474426, 'train_d_fake_loss': 0.873066246509552, 'train_d_fake_accuracy': 0.5856249928474426, 'train_loss': 1.6043955087661743, 'train_generator_loss': 0.5843530893325806, 'train_discriminator_loss': 0.602265477180481, 'train_feature_extractor_loss': 6.224061489105225, 'train_feature_extractor_1_loss': 32.15223693847656, 'train_generator_PSNR_Y': 6.626471042633057}
+2021-09-15 05:30:52,786 - ISR.train.trainer - DEBUG - Losses at step 3:
+ {'train_d_real_loss': 0.6531368494033813, 'train_d_real_accuracy': 0.6068750023841858, 'train_d_fake_loss': 1.1679164171218872, 'train_d_fake_accuracy': 0.46812498569488525, 'train_loss': 0.13628464937210083, 'train_generator_loss': 0.37239620089530945, 'train_discriminator_loss': 0.381428986787796, 'train_feature_extractor_loss': 0.514473557472229, 'train_feature_extractor_1_loss': 2.6660871505737305, 'train_generator_PSNR_Y': 8.969880104064941}
+2021-09-15 05:31:00,428 - ISR.train.trainer - DEBUG - Losses at step 4:
+ {'train_d_real_loss': 0.47342193126678467, 'train_d_real_accuracy': 0.8100000023841858, 'train_d_fake_loss': 0.8023983240127563, 'train_d_fake_accuracy': 0.41187500953674316, 'train_loss': 1.4837170839309692, 'train_generator_loss': 0.4386393427848816, 'train_discriminator_loss': 0.6343309879302979, 'train_feature_extractor_loss': 4.945557117462158, 'train_feature_extractor_1_loss': 30.52560043334961, 'train_generator_PSNR_Y': 6.954700946807861}
+2021-09-15 05:31:08,012 - ISR.train.trainer - DEBUG - Losses at step 5:
+ {'train_d_real_loss': 0.4130670130252838, 'train_d_real_accuracy': 0.8224999904632568, 'train_d_fake_loss': 0.8352577090263367, 'train_d_fake_accuracy': 0.5375000238418579, 'train_loss': 0.5720238089561462, 'train_generator_loss': 0.1916133463382721, 'train_discriminator_loss': 0.8521041870117188, 'train_feature_extractor_loss': 1.6977334022521973, 'train_feature_extractor_1_loss': 11.831745147705078, 'train_generator_PSNR_Y': 13.858837127685547}
+2021-09-15 05:31:16,486 - ISR.train.trainer - DEBUG - Losses at step 6:
+ {'train_d_real_loss': 0.31619924306869507, 'train_d_real_accuracy': 0.9643750190734863, 'train_d_fake_loss': 0.48169371485710144, 'train_d_fake_accuracy': 0.7706249952316284, 'train_loss': 0.5758997797966003, 'train_generator_loss': 0.1823190450668335, 'train_discriminator_loss': 0.61393141746521, 'train_feature_extractor_loss': 1.7401869297027588, 'train_feature_extractor_1_loss': 11.939536094665527, 'train_generator_PSNR_Y': 14.292757987976074}
+2021-09-15 05:31:23,885 - ISR.train.trainer - DEBUG - Losses at step 7:
+ {'train_d_real_loss': 0.4210549592971802, 'train_d_real_accuracy': 0.796875, 'train_d_fake_loss': 0.4419240653514862, 'train_d_fake_accuracy': 0.890625, 'train_loss': 2.0851869583129883, 'train_generator_loss': 0.5541859865188599, 'train_discriminator_loss': 0.48511672019958496, 'train_feature_extractor_loss': 8.05014705657959, 'train_feature_extractor_1_loss': 41.897891998291016, 'train_generator_PSNR_Y': 5.8695173263549805}
+2021-09-15 05:32:51,493 - ISR.train.trainer - DEBUG - Losses at step 8:
+ {'train_d_real_loss': 0.3961561620235443, 'train_d_real_accuracy': 0.8862500190734863, 'train_d_fake_loss': 0.3230908215045929, 'train_d_fake_accuracy': 0.9193750023841858, 'train_loss': 0.8877209424972534, 'train_generator_loss': 0.27394789457321167, 'train_discriminator_loss': 0.887786865234375, 'train_feature_extractor_loss': 2.8976266384124756, 'train_feature_extractor_1_loss': 18.203046798706055, 'train_generator_PSNR_Y': 11.155841827392578}
+2021-09-15 05:32:59,977 - ISR.train.trainer - DEBUG - Losses at step 9:
+ {'train_d_real_loss': 0.8907948136329651, 'train_d_real_accuracy': 0.4293749928474426, 'train_d_fake_loss': 0.38354068994522095, 'train_d_fake_accuracy': 0.8506249785423279, 'train_loss': 1.1305863857269287, 'train_generator_loss': 0.3186206519603729, 'train_discriminator_loss': 0.9928432703018188, 'train_feature_extractor_loss': 3.757476806640625, 'train_feature_extractor_1_loss': 23.14907455444336, 'train_generator_PSNR_Y': 9.957820892333984}
+2021-09-15 05:33:07,196 - ISR.train.trainer - DEBUG - Losses at step 10:
+ {'train_d_real_loss': 0.19847731292247772, 'train_d_real_accuracy': 0.9762499928474426, 'train_d_fake_loss': 0.2982350289821625, 'train_d_fake_accuracy': 0.9437500238418579, 'train_loss': 1.155797004699707, 'train_generator_loss': 0.294399619102478, 'train_discriminator_loss': 0.2695755362510681, 'train_feature_extractor_loss': 5.356771945953369, 'train_feature_extractor_1_loss': 22.3287296295166, 'train_generator_PSNR_Y': 9.309121131896973}
+2021-09-15 05:33:14,412 - ISR.train.trainer - DEBUG - Losses at step 11:
+ {'train_d_real_loss': 0.18696804344654083, 'train_d_real_accuracy': 0.9693750143051147, 'train_d_fake_loss': 0.33525770902633667, 'train_d_fake_accuracy': 0.890625, 'train_loss': 1.5948551893234253, 'train_generator_loss': 0.24823854863643646, 'train_discriminator_loss': 0.1409294158220291, 'train_feature_extractor_loss': 5.690922737121582, 'train_feature_extractor_1_loss': 32.567081451416016, 'train_generator_PSNR_Y': 11.689102172851562}
+2021-09-15 05:33:21,741 - ISR.train.trainer - DEBUG - Losses at step 12:
+ {'train_d_real_loss': 0.1225002110004425, 'train_d_real_accuracy': 1.0, 'train_d_fake_loss': 0.14385412633419037, 'train_d_fake_accuracy': 0.9987499713897705, 'train_loss': 1.4668160676956177, 'train_generator_loss': 0.37176719307899475, 'train_discriminator_loss': 0.10076706856489182, 'train_feature_extractor_loss': 5.876286506652832, 'train_feature_extractor_1_loss': 29.317190170288086, 'train_generator_PSNR_Y': 8.349159240722656}
+2021-09-15 05:40:22,119 - ISR.utils.train_helper - INFO - 
+Training details:
+2021-09-15 05:40:22,121 - ISR.utils.train_helper - INFO -   training_parameters: 
+2021-09-15 05:40:22,122 - ISR.utils.train_helper - INFO -     lr_train_dir: div2k/DIV2K_train_LR_bicubic/X2/
+2021-09-15 05:40:22,123 - ISR.utils.train_helper - INFO -     hr_train_dir: div2k/DIV2K_train_HR/
+2021-09-15 05:40:22,123 - ISR.utils.train_helper - INFO -     lr_valid_dir: div2k/DIV2K_train_LR_bicubic/X2/
+2021-09-15 05:40:22,124 - ISR.utils.train_helper - INFO -     hr_valid_dir: div2k/DIV2K_train_HR/
+2021-09-15 05:40:22,125 - ISR.utils.train_helper - INFO -     loss_weights: {'generator': 0.0, 'feature_extractor': 0.0833, 'discriminator': 0.01}
+2021-09-15 05:40:22,125 - ISR.utils.train_helper - INFO -     log_dirs: {'logs': './logs', 'weights': './weights'}
+2021-09-15 05:40:22,126 - ISR.utils.train_helper - INFO -     fallback_save_every_n_epochs: 2
+2021-09-15 05:40:22,127 - ISR.utils.train_helper - INFO -     dataname: div2k
+2021-09-15 05:40:22,128 - ISR.utils.train_helper - INFO -     n_validation: 40
+2021-09-15 05:40:22,129 - ISR.utils.train_helper - INFO -     flatness: {'min': 0.0, 'max': 0.15, 'increase': 0.01, 'increase_frequency': 5}
+2021-09-15 05:40:22,130 - ISR.utils.train_helper - INFO -     learning_rate: {'initial_value': 0.0004, 'decay_factor': 0.5, 'decay_frequency': 30}
+2021-09-15 05:40:22,131 - ISR.utils.train_helper - INFO -     adam_optimizer: {'beta1': 0.9, 'beta2': 0.999, 'epsilon': None}
+2021-09-15 05:40:22,131 - ISR.utils.train_helper - INFO -     losses: {'generator': 'mae', 'discriminator': 'binary_crossentropy', 'feature_extractor': 'mse'}
+2021-09-15 05:40:22,132 - ISR.utils.train_helper - INFO -     metrics: {'generator': <function PSNR_Y at 0x7f5054bf64c0>}
+2021-09-15 05:40:22,133 - ISR.utils.train_helper - INFO -     lr_patch_size: 40
+2021-09-15 05:40:22,134 - ISR.utils.train_helper - INFO -     steps_per_epoch: 20
+2021-09-15 05:40:22,134 - ISR.utils.train_helper - INFO -     batch_size: 4
+2021-09-15 05:40:22,135 - ISR.utils.train_helper - INFO -     starting_epoch: 0
+2021-09-15 05:40:22,135 - ISR.utils.train_helper - INFO -   generator: 
+2021-09-15 05:40:22,136 - ISR.utils.train_helper - INFO -     name: rrdn
+2021-09-15 05:40:22,136 - ISR.utils.train_helper - INFO -     parameters: {'C': 4, 'D': 3, 'G': 64, 'G0': 64, 'T': 10, 'x': 2}
+2021-09-15 05:40:22,136 - ISR.utils.train_helper - INFO -     weights_generator: None
+2021-09-15 05:40:22,137 - ISR.utils.train_helper - INFO -   discriminator: 
+2021-09-15 05:40:22,137 - ISR.utils.train_helper - INFO -     name: srgan-large
+2021-09-15 05:40:22,137 - ISR.utils.train_helper - INFO -     weights_discriminator: None
+2021-09-15 05:40:22,138 - ISR.utils.train_helper - INFO -   feature_extractor: 
+2021-09-15 05:40:22,138 - ISR.utils.train_helper - INFO -     name: vgg19
+2021-09-15 05:40:22,138 - ISR.utils.train_helper - INFO -     layers: [5, 9]
+2021-09-15 05:40:28,965 - ISR.train.trainer - INFO - Epoch 0/1
+2021-09-15 05:40:28,968 - ISR.train.trainer - INFO - Current learning rate: 0.00039999998989515007
+2021-09-15 05:40:43,873 - ISR.train.trainer - DEBUG - Losses at step 0:
+ {'train_d_real_loss': 0.539949893951416, 'train_d_real_accuracy': 0.6987500190734863, 'train_d_fake_loss': 1.282586932182312, 'train_d_fake_accuracy': 0.2006250023841858, 'train_loss': 2.201080322265625, 'train_generator_loss': 0.33127814531326294, 'train_discriminator_loss': 0.5026200413703918, 'train_feature_extractor_loss': 8.545862197875977, 'train_feature_extractor_1_loss': 44.18052673339844, 'train_generator_PSNR_Y': 10.268960952758789}
+2021-09-15 05:40:51,444 - ISR.train.trainer - DEBUG - Losses at step 1:
+ {'train_d_real_loss': 0.5238426327705383, 'train_d_real_accuracy': 0.8100000023841858, 'train_d_fake_loss': 1.1314098834991455, 'train_d_fake_accuracy': 0.45625001192092896, 'train_loss': 0.9347738027572632, 'train_generator_loss': 0.20273135602474213, 'train_discriminator_loss': 0.4986565411090851, 'train_feature_extractor_loss': 4.052925109863281, 'train_feature_extractor_1_loss': 18.270896911621094, 'train_generator_PSNR_Y': 10.828539848327637}
+2021-09-15 05:40:58,970 - ISR.train.trainer - DEBUG - Losses at step 2:
+ {'train_d_real_loss': 0.45184025168418884, 'train_d_real_accuracy': 0.8306249976158142, 'train_d_fake_loss': 1.2335177659988403, 'train_d_fake_accuracy': 0.23749999701976776, 'train_loss': 0.8351607918739319, 'train_generator_loss': 0.4694332778453827, 'train_discriminator_loss': 0.7666010856628418, 'train_feature_extractor_loss': 3.4011993408203125, 'train_feature_extractor_1_loss': 16.46662139892578, 'train_generator_PSNR_Y': 6.788882732391357}
+2021-09-15 05:41:06,603 - ISR.train.trainer - DEBUG - Losses at step 3:
+ {'train_d_real_loss': 0.4967350363731384, 'train_d_real_accuracy': 0.7487499713897705, 'train_d_fake_loss': 0.8049294948577881, 'train_d_fake_accuracy': 0.49812498688697815, 'train_loss': 1.959289789199829, 'train_generator_loss': 0.5587943196296692, 'train_discriminator_loss': 0.6503189206123352, 'train_feature_extractor_loss': 7.501913547515869, 'train_feature_extractor_1_loss': 39.38371658325195, 'train_generator_PSNR_Y': 5.867882251739502}
+2021-09-15 05:41:13,947 - ISR.train.trainer - DEBUG - Losses at step 4:
+ {'train_d_real_loss': 0.34267041087150574, 'train_d_real_accuracy': 0.9262499809265137, 'train_d_fake_loss': 0.9628167152404785, 'train_d_fake_accuracy': 0.4312500059604645, 'train_loss': 0.4033985137939453, 'train_generator_loss': 0.8465431928634644, 'train_discriminator_loss': 0.40208449959754944, 'train_feature_extractor_loss': 1.6731361150741577, 'train_feature_extractor_1_loss': 7.9157633781433105, 'train_generator_PSNR_Y': 2.9997053146362305}
+2021-09-15 05:41:21,463 - ISR.train.trainer - DEBUG - Losses at step 5:
+ {'train_d_real_loss': 0.23994113504886627, 'train_d_real_accuracy': 0.9787499904632568, 'train_d_fake_loss': 0.4647711217403412, 'train_d_fake_accuracy': 0.846875011920929, 'train_loss': 1.150098443031311, 'train_generator_loss': 0.3191932439804077, 'train_discriminator_loss': 0.5375143885612488, 'train_feature_extractor_loss': 4.435446262359619, 'train_feature_extractor_1_loss': 23.048906326293945, 'train_generator_PSNR_Y': 9.401808738708496}
+2021-09-15 05:41:28,733 - ISR.train.trainer - DEBUG - Losses at step 6:
+ {'train_d_real_loss': 0.13406962156295776, 'train_d_real_accuracy': 1.0, 'train_d_fake_loss': 0.38970160484313965, 'train_d_fake_accuracy': 0.8774999976158142, 'train_loss': 1.1678532361984253, 'train_generator_loss': 0.35349419713020325, 'train_discriminator_loss': 1.5965356826782227, 'train_feature_extractor_loss': 3.902662992477417, 'train_feature_extractor_1_loss': 23.753707885742188, 'train_generator_PSNR_Y': 8.855368614196777}
+2021-09-15 05:41:36,376 - ISR.train.trainer - DEBUG - Losses at step 7:
+ {'train_d_real_loss': 0.09240072220563889, 'train_d_real_accuracy': 1.0, 'train_d_fake_loss': 0.1264401525259018, 'train_d_fake_accuracy': 0.9962499737739563, 'train_loss': 0.8528615236282349, 'train_generator_loss': 0.3929396867752075, 'train_discriminator_loss': 1.764192819595337, 'train_feature_extractor_loss': 2.9834344387054443, 'train_feature_extractor_1_loss': 17.069856643676758, 'train_generator_PSNR_Y': 7.18391752243042}
+2021-09-15 05:41:43,947 - ISR.train.trainer - DEBUG - Losses at step 8:
+ {'train_d_real_loss': 0.23705703020095825, 'train_d_real_accuracy': 0.9443749785423279, 'train_d_fake_loss': 0.22937189042568207, 'train_d_fake_accuracy': 0.9737499952316284, 'train_loss': 1.0928421020507812, 'train_generator_loss': 0.31270289421081543, 'train_discriminator_loss': 0.3686572313308716, 'train_feature_extractor_loss': 3.4441912174224854, 'train_feature_extractor_1_loss': 22.70600128173828, 'train_generator_PSNR_Y': 8.172235488891602}
+2021-09-15 05:41:51,150 - ISR.train.trainer - DEBUG - Losses at step 9:
+ {'train_d_real_loss': 0.29256850481033325, 'train_d_real_accuracy': 0.9175000190734863, 'train_d_fake_loss': 0.23267750442028046, 'train_d_fake_accuracy': 0.9762499928474426, 'train_loss': 1.9825444221496582, 'train_generator_loss': 0.3016422986984253, 'train_discriminator_loss': 0.24077197909355164, 'train_feature_extractor_loss': 7.505423545837402, 'train_feature_extractor_1_loss': 40.0368766784668, 'train_generator_PSNR_Y': 8.421351432800293}
+2021-09-15 05:41:59,068 - ISR.train.trainer - DEBUG - Losses at step 10:
+ {'train_d_real_loss': 0.1683945506811142, 'train_d_real_accuracy': 0.9950000047683716, 'train_d_fake_loss': 0.31432732939720154, 'train_d_fake_accuracy': 0.925000011920929, 'train_loss': 1.5944948196411133, 'train_generator_loss': 0.45147353410720825, 'train_discriminator_loss': 0.09232557564973831, 'train_feature_extractor_loss': 4.960000991821289, 'train_feature_extractor_1_loss': 33.301021575927734, 'train_generator_PSNR_Y': 8.460502624511719}
+2021-09-15 05:42:06,704 - ISR.train.trainer - DEBUG - Losses at step 11:
+ {'train_d_real_loss': 0.21791347861289978, 'train_d_real_accuracy': 0.9312499761581421, 'train_d_fake_loss': 0.11646794527769089, 'train_d_fake_accuracy': 0.9856250286102295, 'train_loss': 1.617378830909729, 'train_generator_loss': 0.4697355329990387, 'train_discriminator_loss': 0.19647979736328125, 'train_feature_extractor_loss': 5.584693431854248, 'train_feature_extractor_1_loss': 33.20075607299805, 'train_generator_PSNR_Y': 6.927218914031982}
+2021-09-15 05:42:14,491 - ISR.train.trainer - DEBUG - Losses at step 12:
+ {'train_d_real_loss': 0.13105349242687225, 'train_d_real_accuracy': 0.9981250166893005, 'train_d_fake_loss': 0.13085894286632538, 'train_d_fake_accuracy': 0.9987499713897705, 'train_loss': 2.183933973312378, 'train_generator_loss': 0.21730312705039978, 'train_discriminator_loss': 0.008652051910758018, 'train_feature_extractor_loss': 8.559378623962402, 'train_feature_extractor_1_loss': 43.873931884765625, 'train_generator_PSNR_Y': 12.643470764160156}
+2021-09-15 05:42:21,684 - ISR.train.trainer - DEBUG - Losses at step 13:
+ {'train_d_real_loss': 0.09845448285341263, 'train_d_real_accuracy': 1.0, 'train_d_fake_loss': 0.06552308797836304, 'train_d_fake_accuracy': 1.0, 'train_loss': 1.9368644952774048, 'train_generator_loss': 0.4067329466342926, 'train_discriminator_loss': 0.009690430946648121, 'train_feature_extractor_loss': 7.491185188293457, 'train_feature_extractor_1_loss': 39.00983428955078, 'train_generator_PSNR_Y': 7.03038215637207}
+2021-09-15 05:42:29,284 - ISR.train.trainer - DEBUG - Losses at step 14:
+ {'train_d_real_loss': 0.04517705738544464, 'train_d_real_accuracy': 1.0, 'train_d_fake_loss': 0.05677969008684158, 'train_d_fake_accuracy': 1.0, 'train_loss': 0.982354462146759, 'train_generator_loss': 0.3577120900154114, 'train_discriminator_loss': 0.017431968823075294, 'train_feature_extractor_loss': 3.9668877124786377, 'train_feature_extractor_1_loss': 19.6148681640625, 'train_generator_PSNR_Y': 7.866327285766602}
+2021-09-15 05:42:36,605 - ISR.train.trainer - DEBUG - Losses at step 15:
+ {'train_d_real_loss': 0.04038667678833008, 'train_d_real_accuracy': 1.0, 'train_d_fake_loss': 0.09848104417324066, 'train_d_fake_accuracy': 1.0, 'train_loss': 1.1914308071136475, 'train_generator_loss': 0.5161420702934265, 'train_discriminator_loss': 0.028842387720942497, 'train_feature_extractor_loss': 4.877964019775391, 'train_feature_extractor_1_loss': 23.72089385986328, 'train_generator_PSNR_Y': 6.98947811126709}
+2021-09-15 05:42:44,538 - ISR.train.trainer - DEBUG - Losses at step 16:
+ {'train_d_real_loss': 0.00853621494024992, 'train_d_real_accuracy': 1.0, 'train_d_fake_loss': 0.020860916003584862, 'train_d_fake_accuracy': 1.0, 'train_loss': 0.5281460881233215, 'train_generator_loss': 0.6671374440193176, 'train_discriminator_loss': 0.01812680996954441, 'train_feature_extractor_loss': 1.8779962062835693, 'train_feature_extractor_1_loss': 10.798230171203613, 'train_generator_PSNR_Y': 4.619739532470703}
+2021-09-15 05:42:51,788 - ISR.train.trainer - DEBUG - Losses at step 17:
+ {'train_d_real_loss': 0.01637944020330906, 'train_d_real_accuracy': 1.0, 'train_d_fake_loss': 0.04356656223535538, 'train_d_fake_accuracy': 1.0, 'train_loss': 1.6144548654556274, 'train_generator_loss': 0.6294881105422974, 'train_discriminator_loss': 0.009891972877085209, 'train_feature_extractor_loss': 6.41819953918457, 'train_feature_extractor_1_loss': 32.34184646606445, 'train_generator_PSNR_Y': 5.452682971954346}
+2021-09-15 05:42:59,193 - ISR.train.trainer - DEBUG - Losses at step 18:
+ {'train_d_real_loss': 0.04043781757354736, 'train_d_real_accuracy': 1.0, 'train_d_fake_loss': 0.04604470357298851, 'train_d_fake_accuracy': 1.0, 'train_loss': 1.178244948387146, 'train_generator_loss': 0.2672103941440582, 'train_discriminator_loss': 0.0014138227561488748, 'train_feature_extractor_loss': 4.340696811676025, 'train_feature_extractor_1_loss': 23.948158264160156, 'train_generator_PSNR_Y': 11.805853843688965}
+2021-09-15 05:43:06,568 - ISR.train.trainer - DEBUG - Losses at step 19:
+ {'train_d_real_loss': 0.0060466681607067585, 'train_d_real_accuracy': 1.0, 'train_d_fake_loss': 0.01216701790690422, 'train_d_fake_accuracy': 1.0, 'train_loss': 1.1264318227767944, 'train_generator_loss': 0.59334796667099, 'train_discriminator_loss': 0.0013196063227951527, 'train_feature_extractor_loss': 4.484956741333008, 'train_feature_extractor_1_loss': 22.559907913208008, 'train_generator_PSNR_Y': 5.282268047332764}
+2021-09-15 05:43:06,570 - ISR.train.trainer - INFO - Epoch 0 took      157.6s
+2021-09-15 05:43:47,061 - ISR.utils.train_helper - INFO - {'val_loss': 0.8708183169364929, 'val_generator_loss': 0.41152223944664, 'val_discriminator_loss': 0.001298361923545599, 'val_feature_extractor_loss': 3.6231448650360107, 'val_feature_extractor_1_loss': 17.284547805786133, 'val_generator_PSNR_Y': 8.342458724975586, 'train_d_real_loss': 0.0060466681607067585, 'train_d_real_accuracy': 1.0, 'train_d_fake_loss': 0.01216701790690422, 'train_d_fake_accuracy': 1.0, 'train_loss': 1.1264318227767944, 'train_generator_loss': 0.59334796667099, 'train_discriminator_loss': 0.0013196063227951527, 'train_feature_extractor_loss': 4.484956741333008, 'train_feature_extractor_1_loss': 22.559907913208008, 'train_generator_PSNR_Y': 5.282268047332764}
+2021-09-15 05:43:47,062 - ISR.utils.train_helper - INFO - val_generator_PSNR_Y improved from       -inf to    8.34246
+2021-09-15 05:43:47,062 - ISR.utils.train_helper - INFO - Saving weights
